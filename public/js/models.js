@@ -1,6 +1,7 @@
-Person = Backbone.Model.extend({
-	initialize: function(){
-    	//alert("Welcome to this world");
-    }
+BlogPost = Backbone.Model.extend({
+	defaults: {
+		title: '',
+		date_created: new Date(),
+		content: '',
+	}
 });
-var person = new Person({ name: "Thomas", age: 67});
