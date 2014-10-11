@@ -1,6 +1,6 @@
 (function() {
    
-    SearchView = Backbone.View.extend({
+    HomeView = Backbone.View.extend({
         initialize: function(){
             this.render();
         },
