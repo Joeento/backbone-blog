@@ -13,7 +13,6 @@
 			// Since the home view never changes, we instantiate it and render it only once
 			if (!this.homeView) {
 				this.homeView = new HomeView({el: $('#container')});
-				this.homeView.render();
 			}
 		},
 
