@@ -13,9 +13,27 @@ var port = process.env.PORT || 8080;
 var router = express.Router();
 
 
-router.route('/blog').get(function(req, res) {
-		
-	});
+router.route('/posts').get(function(req, res) {
+	var tempBlogs = [{
+		id: 1,
+		title: 'Hello World!',
+		date: new Date(2014, 8, 20, 6, 30, 0, 0),
+		content: 'This is a sample blog piece'
+	},
+	{
+		id: 2,
+		title: 'Test Blog Post',
+		date: new Date(2014, 9, 20, 6, 30, 0, 0),
+		content: 'This is another sample blog piece'
+	},
+	{
+		id: 3,
+		title: 'Test Blog Post',
+		date: new Date(2014, 10, 20, 6, 30, 0, 0),
+		content: 'A Third sample blog post?!'
+	}];
+	res.json(tempBlogs);
+});
 
 
 
