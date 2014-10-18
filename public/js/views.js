@@ -13,7 +13,7 @@ HomeView = Backbone.View.extend({
                 for (var i=0;i<data.models.length;i++) {
                     var li = $('<li/>');
                     var a = $('<a/>');
-                    a.attr('href','posts/'+data.models[i].attributes.id)
+                    a.attr('href','#/post/'+data.models[i].attributes.id)
                     a.append(data.models[i].attributes.title)
                     li.append(a)
                     $('#post-listing').append(li);

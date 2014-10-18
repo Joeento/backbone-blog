@@ -3,6 +3,7 @@
 
 		routes:{
 			"":"home",
+			"post/:id":"post",
 		},
 
 		initialize:function () {
@@ -15,9 +16,9 @@
 				this.homeView = new HomeView({el: $('#container')});
 			}
 		},
-		home:function(id) {
+		post:function(id) {
 			// Since the home view never changes, we instantiate it and render it only once
-			if (!this.homeView) {
+			if (!this.postView) {
 				this.postView = new PostView({el: $('#container')});
 			}
 		},
