@@ -12,9 +12,7 @@ var port = process.env.PORT || 8080;
 //add a router
 var router = express.Router();
 
-
-router.route('/posts').get(function(req, res) {
-	var tempBlogs = [{
+var tempBlogs = [{
 		id: 1,
 		title: 'Hello World!',
 		date: new Date(2014, 8, 20, 6, 30, 0, 0),
@@ -32,10 +30,14 @@ router.route('/posts').get(function(req, res) {
 		date: new Date(2014, 10, 20, 6, 30, 0, 0),
 		content: 'A Third sample blog post?!'
 	}];
+
+router.route('/posts').get(function(req, res) {
 	res.json(tempBlogs);
 });
 
-
+router.route('/posts/:id').get(function(req, res) {
+	res.json(tempBlogs[req.params.id]);
+});
 
 app.use('/api', router);
 
