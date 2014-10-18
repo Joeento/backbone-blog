@@ -19,7 +19,7 @@
 		post: function(id) {
 			// Since the home view never changes, we instantiate it and render it only once
 			if (!this.postView) {
-				this.postView = new PostView({el: $('#container')});
+				this.postView = new PostView({el: $('#container'), id: id});
 			}
 		},
 
