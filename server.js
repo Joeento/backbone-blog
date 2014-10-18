@@ -28,7 +28,7 @@ router.route('/posts').get(function(req, res) {
 	},
 	{
 		id: 3,
-		title: 'Test Blog Post',
+		title: 'Test Blog Post 2',
 		date: new Date(2014, 10, 20, 6, 30, 0, 0),
 		content: 'A Third sample blog post?!'
 	}];
