@@ -36,8 +36,9 @@ PostView = Backbone.View.extend({
         var post = new BlogPost({id: this.id});
         post.fetch({
             success: function(data) {
-                console.log(data);
-                $('#post-title').text('');
+                $('#post-title').text(data.attributes.title);
+                $('#post-date').text(data.attributes.date);
+                $('#post-content').text(data.attributes.content);
             }
         })
 
