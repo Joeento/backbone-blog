@@ -9,17 +9,22 @@
 		
 		},
 
-		home:function () {
+		home:function() {
 			// Since the home view never changes, we instantiate it and render it only once
 			if (!this.homeView) {
 				this.homeView = new HomeView({el: $('#container')});
 			}
 		},
-
+		home:function(id) {
+			// Since the home view never changes, we instantiate it and render it only once
+			if (!this.homeView) {
+				this.postView = new PostView({el: $('#container')});
+			}
+		},
 
 	});
 
-	tpl.loadTemplates(['home'],
+	tpl.loadTemplates(['home','post'],
 	function () {
 		app = new AppRouter();
 		Backbone.history.start();

@@ -23,3 +23,16 @@ HomeView = Backbone.View.extend({
         });
     }
 });
+
+PostView = Backbone.View.extend({
+    initialize: function(){
+        this.render();
+    },
+    render: function(){
+        // Compile the template using underscore
+        var template = _.template(tpl.get('post'), {} );
+        // Load the compiled HTML into the Backbone "el"
+        this.$el.html(template);
+        alert("post will load here");
+    }
+});
