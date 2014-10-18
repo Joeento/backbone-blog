@@ -12,10 +12,12 @@ HomeView = Backbone.View.extend({
             success: function(data) {
                 for (var i=0;i<data.models.length;i++) {
                     var li = $('<li/>');
-                    li.append(data.models[i].attributes.title)
+                    var a = $('<a/>');
+                    a.attr('href','posts/'+data.models[i].attributes.id)
+                    a.append(data.models[i].attributes.title)
+                    li.append(a)
                     $('#post-listing').append(li);
-                }
-                
+                }               
                 
             }
         });
