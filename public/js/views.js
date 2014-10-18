@@ -33,6 +33,13 @@ PostView = Backbone.View.extend({
         var template = _.template(tpl.get('post'), {} );
         // Load the compiled HTML into the Backbone "el"
         this.$el.html(template);
-        alert("post will load here");
+        var post = new BlogPost({id: 3});
+        post.fetch({
+            success: function(data) {
+                console.log(data);
+                $('#post-title').text('');
+            }
+        })
+
     }
 });
