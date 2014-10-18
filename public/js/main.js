@@ -1,22 +1,22 @@
 (function() {
 	var AppRouter = Backbone.Router.extend({
 
-		routes:{
+		routes: {
 			"":"home",
 			"post/:id":"post",
 		},
 
-		initialize:function () {
+		initialize: function () {
 		
 		},
 
-		home:function() {
+		home: function() {
 			// Since the home view never changes, we instantiate it and render it only once
 			if (!this.homeView) {
 				this.homeView = new HomeView({el: $('#container')});
 			}
 		},
-		post:function(id) {
+		post: function(id) {
 			// Since the home view never changes, we instantiate it and render it only once
 			if (!this.postView) {
 				this.postView = new PostView({el: $('#container')});
