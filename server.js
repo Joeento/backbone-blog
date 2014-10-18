@@ -13,19 +13,19 @@ var port = process.env.PORT || 8080;
 var router = express.Router();
 
 var tempBlogs = [{
-		id: 1,
+		id: 0,
 		title: 'Hello World!',
 		date: new Date(2014, 8, 20, 6, 30, 0, 0),
 		content: 'This is a sample blog piece'
 	},
 	{
-		id: 2,
+		id: 1,
 		title: 'Test Blog Post',
 		date: new Date(2014, 9, 20, 6, 30, 0, 0),
 		content: 'This is another sample blog piece'
 	},
 	{
-		id: 3,
+		id: 2,
 		title: 'Test Blog Post 2',
 		date: new Date(2014, 10, 20, 6, 30, 0, 0),
 		content: 'A Third sample blog post?!'
