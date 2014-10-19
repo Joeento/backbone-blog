@@ -46,7 +46,12 @@ router.route('/posts').get(function(req, res) {
 });
 
 router.route('/posts/:id').get(function(req, res) {
-	res.json(tempBlogs[req.params.id]);
+	Post.findById(req.params.id, function(err, post) {
+			if (err)
+				res.send(err);
+
+			res.json(post);
+		});
 });
 
 app.use('/api', router);

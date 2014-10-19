@@ -3,8 +3,8 @@ var Schema       = mongoose.Schema;
 
 var PostSchema   = new Schema({
 	title: String,
-	date: Number,
-	content: Number,
+	date: Date,
+	content: String,
 });
 
 module.exports = mongoose.model('Post', PostSchema);
