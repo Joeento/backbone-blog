@@ -39,6 +39,19 @@ PostView = Backbone.View.extend({
                 $('#post-title').text(data.attributes.title);
                 $('#post-date').text('Posted ' + moment(data.attributes.date).fromNow());
                 $('#post-content').text(data.attributes.content);
+
+                var tagString = '';
+                for (var i=0; i<data.attributes.tags.length;i++) {
+                    var a = $('<a/>');
+                    a.text(data.attributes.tags[i]);
+                    a.attr('href', '#/tag/' + data.attributes.tags[i]);
+                    tagString += a.html();
+                    if (i<data.attributes.tags.length-1) {
+                        tagString += ', ';
+                    }
+                }
+                console.log(tagString)
+                $('#post-tags').html(tagString);
             }
         })
 
