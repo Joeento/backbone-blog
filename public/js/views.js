@@ -50,7 +50,6 @@ PostView = Backbone.View.extend({
                         tagString += ', ';
                     }
                 }
-                console.log(tagString)
                 $('#post-tags').html(tagString);
             }
         })
