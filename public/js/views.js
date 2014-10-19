@@ -45,7 +45,7 @@ PostView = Backbone.View.extend({
                     var a = $('<a/>');
                     a.text(data.attributes.tags[i]);
                     a.attr('href', '#/tag/' + data.attributes.tags[i]);
-                    tagString += a.html();
+                    tagString += a.prop('outerHTML');
                     if (i<data.attributes.tags.length-1) {
                         tagString += ', ';
                     }
