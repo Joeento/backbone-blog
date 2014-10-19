@@ -2,6 +2,9 @@
 var express    = require('express'); 		// call express
 var app        = express(); 				// define our app using express
 var bodyParser = require('body-parser');
+var config	   = require('./config.js');
+var Post   = require('./schemas/post');
+var mongoose   = require('mongoose');
 
 app.use(bodyParser());
 app.use(express.static(__dirname + '/public'));
@@ -12,6 +15,8 @@ var port = process.env.PORT || 8080;
 //add a router
 var router = express.Router();
 
+mongoose.connect(config.mongoURL);
+
 var tempBlogs = [{
 		id: 0,
 		title: 'Hello World!',
@@ -21,7 +26,7 @@ var tempBlogs = [{
 	{
 		id: 1,
 		title: 'Test Blog Post',
-		date: new Date(2014, 9, 20, 6, 30, 0, 0),
+		date: new Date(2014, 9, 15, 6, 30, 0, 0),
 		content: 'This is another sample blog piece'
 	},
 	{
@@ -32,7 +37,12 @@ var tempBlogs = [{
 	}];
 
 router.route('/posts').get(function(req, res) {
-	res.json(tempBlogs);
+	Post.find(function(err, posts) {
+			if (err)
+				res.send(err);
+
+			res.json(posts);
+		});
 });
 
 router.route('/posts/:id').get(function(req, res) {
