@@ -54,6 +54,15 @@ router.route('/posts/:id').get(function(req, res) {
 		});
 });
 
+router.route('/tags/:tag').get(function(req, res) {
+	Post.find({tags: {$in: [req.params.tag]}}, function(err, posts) {
+			if (err)
+				res.send(err);
+
+			res.json(posts);
+		});
+});
+
 app.use('/api', router);
 
 app.get('*', function(req, res) {
