@@ -37,7 +37,7 @@ PostView = Backbone.View.extend({
         post.fetch({
             success: function(data) {
                 $('#post-title').text(data.attributes.title);
-                $('#post-date').text(data.attributes.date);
+                $('#post-date').text('Posted ' + moment(data.attributes.date).fromNow());
                 $('#post-content').text(data.attributes.content);
             }
         })
