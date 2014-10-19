@@ -4,6 +4,7 @@
 		routes: {
 			"":"home",
 			"post/:id":"post",
+			"tag/:tag":"tag",
 		},
 
 		initialize: function () {
@@ -16,10 +17,13 @@
 		post: function(id) {
 			this.postView = new PostView({el: $('#container'), id: id});
 		},
+		tag: function(tag) {
+			alert("This is when the tag page will happen");
+		},
 
 	});
 
-	tpl.loadTemplates(['home','post'],
+	tpl.loadTemplates(['home','post', 'tag'],
 	function () {
 		app = new AppRouter();
 		Backbone.history.start();
