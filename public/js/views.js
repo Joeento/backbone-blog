@@ -25,7 +25,8 @@ HomeView = Backbone.View.extend({
 });
 
 PostView = Backbone.View.extend({
-    initialize: function(){
+    initialize: function(options){
+        this.options = options
         this.render();
     },
     render: function(){
@@ -33,7 +34,7 @@ PostView = Backbone.View.extend({
         var template = _.template(tpl.get('post'), {} );
         // Load the compiled HTML into the Backbone "el"
         this.$el.html(template);
-        var post = new BlogPost({id: this.id});
+        var post = new BlogPost({id: this.options.id});
         post.fetch({
             success: function(data) {
                 $('#post-title').text(data.attributes.title);
