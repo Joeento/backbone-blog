@@ -18,7 +18,7 @@
 			this.postView = new PostView({el: $('#container'), id: id});
 		},
 		tag: function(tag) {
-			alert("This is when the tag page will happen");
+			this.tagView = new TagView({el: $('#container'), tag: tag});
 		},
 
 	});
