@@ -1,13 +1,14 @@
 {
-	"name": "backbone-blog",
-	"version": "1.0.0",
-	"dependencies": {
-		"bootstrap": "latest",
-		"font-awesome": "latest",
-		"animate.css": "latest",
-		"jquery": "1.9",
-        "backbone": null,
-        "underscore": null,
-        "requirejs": null
-	}
+  "name": "backbone-blog",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "font-awesome": "latest",
+    "animate.css": "latest",
+    "jquery": "1.9",
+    "backbone": null,
+    "underscore": null,
+    "requirejs": null,
+    "moment": "~2.8.3"
+  }
 }
