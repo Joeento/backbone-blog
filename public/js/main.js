@@ -11,16 +11,10 @@
 		},
 
 		home: function() {
-			// Since the home view never changes, we instantiate it and render it only once
-			if (!this.homeView) {
-				this.homeView = new HomeView({el: $('#container')});
-			}
+			this.homeView = new HomeView({el: $('#container')});
 		},
 		post: function(id) {
-			// Since the home view never changes, we instantiate it and render it only once
-			if (!this.postView) {
-				this.postView = new PostView({el: $('#container'), id: id});
-			}
+			this.postView = new PostView({el: $('#container'), id: id});
 		},
 
 	});
