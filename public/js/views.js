@@ -41,7 +41,7 @@ PostView = Backbone.View.extend({
                 $('#post-date').text('Posted ' + moment(data.attributes.date).fromNow());
                 $('#post-content').html(data.attributes.content);
 
-                var tagString = '';
+                var tagString = '<strong>Tags: </strong>';
                 for (var i=0; i<data.attributes.tags.length;i++) {
                     var a = $('<a/>');
                     a.text(data.attributes.tags[i]);
