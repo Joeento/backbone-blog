@@ -9,6 +9,7 @@
     "backbone": null,
     "underscore": null,
     "requirejs": null,
-    "moment": "~2.8.3"
+    "moment": "~2.8.3",
+    "marionette": "~2.2.2"
   }
 }
