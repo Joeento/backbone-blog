@@ -54,10 +54,27 @@
 
 		<div id="container"></div>
 
+    <script type="text/template" id="home-template">
+      <ul id="post-listing">
+  
+      </ul>
+    </script>
+    <script type="text/template" id="post-template">
+      <h2 id='post-title'></h2>
+      <h3 id='post-date'></h3>
+      <div id='post-content'></div>
+      <div id='post-tags'></div>
+    </script>
+    <script type="text/template" id="tag-template">
+      <ul id="post-listing">
+      </ul>
+    </script>
+
         <script src="js/libs/jquery/jquery.min.js"></script>
         <script src="js/libs/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="js/libs/underscore/underscore.js"></script>
-		<script src="js/libs/backbone/backbone.js"></script>
+		    <script src="js/libs/backbone/backbone.js"></script>
+        <script src="js/libs/marionette/lib/backbone.marionette.js"></script>
         <script src="js/libs/moment/min/moment.min.js"></script>	
         <script src="js/models.js"></script>
         <script src="js/collections.js"></script>

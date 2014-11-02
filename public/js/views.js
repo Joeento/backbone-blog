@@ -4,7 +4,7 @@ HomeView = Backbone.View.extend({
     },
     render: function(){
         // Compile the template using underscore
-        var template = _.template(tpl.get('home'), {} );
+        var template = _.template($('#home-template').html(), {} );
         // Load the compiled HTML into the Backbone "el"
         this.$el.html(template);
         bpc = new BlogPostCollection();
@@ -31,7 +31,7 @@ PostView = Backbone.View.extend({
     },
     render: function(){
         // Compile the template using underscore
-        var template = _.template(tpl.get('post'), {} );
+        var template = _.template($('#post-template').html(), {} );
         // Load the compiled HTML into the Backbone "el"
         this.$el.html(template);
         var post = new BlogPost({id: this.options.id});
@@ -65,7 +65,7 @@ TagView = Backbone.View.extend({
     },
     render: function(){
         // Compile the template using underscore
-        var template = _.template(tpl.get('tag'), {} );
+        var template = _.template($('#tag-template').html(), {} );
         // Load the compiled HTML into the Backbone "el"
         this.$el.html(template);
         bpc = new BlogPostCollection({type: 'tags', value: this.options.tag});
