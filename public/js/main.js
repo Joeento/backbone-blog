@@ -23,9 +23,13 @@
 
 	});
 
-	tpl.loadTemplates(['home','post', 'tag'],
-	function () {
-		app = new AppRouter();
-		Backbone.history.start();
+	
+	app = new AppRouter();
+	Backbone.history.start();
+	
+
+	MyApp = new Backbone.Marionette.Application();
+	MyApp.addRegions({
+	  mainRegion: "#content"
 	});
 })();
